@@ -125,7 +125,17 @@ button.submit:hover {
 
 /* ----  Responsiveness   ----  */
 @media (max-width: 780px) {
-
+.welcome-message {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 28px;
+    margin-bottom: 30px;
+    color: black;
+}
+    
+    a{
+    color:black;
+    }
     body {
         display: flex;
         justify-content: center;
