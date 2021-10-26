@@ -5,7 +5,9 @@
     font-family: 'Montserrat', sans-serif;
     color: #303433;
 }
-
+.p{
+    color: wheat;
+}
 body {
     min-height: 100vh;
     width: 100%;
