@@ -114,7 +114,7 @@ button.submit {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
-    background-image: linear-gradient(to right, #008d8d, #4b7d94);
+    background-image: linear-gradient(to right, wheat, gray);
     cursor: pointer;
     transition: opacity 0.4s;
 }
