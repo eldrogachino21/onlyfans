@@ -1,12 +1,11 @@
 var config = {
-  apiKey: "AIzaSyD8WXHgN7DP3wGpk6kP4wWt8v3vuWNMkN4",
-    authDomain: "proyectomodular-6980b.firebaseapp.com",
-    databaseURL: "https://proyectomodular-6980b-default-rtdb.firebaseio.com",
-    projectId: "proyectomodular-6980b",
-    storageBucket: "proyectomodular-6980b.appspot.com",
-    messagingSenderId: "964515011775",
-    appId: "1:964515011775:web:247b58a7a5e14f8e0bfa0a",
-    measurementId: "G-CP7LKM240X"
+  apiKey: "AIzaSyC1KT3aBbQbx_LTpcdSO995B_f0blI8fzw",
+  authDomain: "onlyfansclone-3ada1.firebaseapp.com",
+  projectId: "onlyfansclone-3ada1",
+  storageBucket: "onlyfansclone-3ada1.appspot.com",
+  messagingSenderId: "1010568675424",
+  appId: "1:1010568675424:web:9dd1d1eb8d5922287ac305",
+  measurementId: "G-2P0E5VP2LV"
 };
 firebase.initializeApp(config);
 
@@ -21,7 +20,7 @@ function render1(){
     if(datos==null){
         
     }else{
-      location.replace('index.html');
+      //location.replace('index.html');
     }
 }
 
@@ -95,7 +94,7 @@ starCountRef.once('value', (snapshot) => {
   //Redireccionamiento tras 5 segundos
   
 
-  location.href="index.html";
+  //location.href="index.html";
  
 }else{
  alert("los datos no coinciden con los de la cuenta registrada");
