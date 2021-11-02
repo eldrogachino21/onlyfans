@@ -21,12 +21,12 @@ document.getElementById("form").addEventListener("submit",(e)=>{
   var conpass = getId("password2");
   var name = getId("name");
   
-  var starCountRef = firebase.database().ref('Usuarios/'+email);
+  var starCountRef = firebase.database().ref('Usuarios/'+tel);
 starCountRef.once('value', (snapshot) => {
 
   if (snapshot.exists()) {
     console.log(snapshot.val());
-    const id = snapshot.val().email;
+    const id = snapshot.val().tel;
     if(id==tel){
       alert("no se ha podido registrar el correo que ingresaste ya existe");
     
