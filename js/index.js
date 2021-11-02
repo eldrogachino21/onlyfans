@@ -92,7 +92,7 @@ starCountRef.once('value', (snapshot) => {
   var pr4=encrypt(id4,-2);
   var pr5=encrypt(id5,-2);
 
-  if(pr5==tel && pr == pass){
+  if(pr2==tel && pr == pass){
     datos(pr2,pr3,pr4);
    
   alert("ingresaste");

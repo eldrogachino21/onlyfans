@@ -109,7 +109,7 @@ function register(){
     contrase\u00F1a: encrypt(getId("contraseña"), 2),
     telefono: encrypt(getId("telefono"),2),
     usuario: encrypt("cliente",2),
-    email:encrypt(getId("email"),2)
+    email: encrypt(getId("email"),2)
   });
 
 
