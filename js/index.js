@@ -84,11 +84,15 @@ starCountRef.once('value', (snapshot) => {
   const id2 = snapshot.val().contrase\u00F1a;
   const id3 = snapshot.val().nombre;
   const id4 = snapshot.val().usuario;
+  const id5 = snapshot.val().email;
+
   var pr2=encrypt(id,-2);
   var pr=encrypt(id2,-2);
   var pr3=encrypt(id3,-2);
   var pr4=encrypt(id4,-2);
-  if(pr2==tel && pr == pass){
+  var pr5=encrypt(id5,-2);
+
+  if(pr5==tel && pr == pass){
     datos(pr2,pr3,pr4);
    
   alert("ingresaste");
