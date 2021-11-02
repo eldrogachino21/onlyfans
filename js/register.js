@@ -15,20 +15,18 @@ document.getElementById("form").addEventListener("submit",(e)=>{
  
   console.log("firebase cargado ")
   e.preventDefault();
-  var tel=getId("phone");
-  var email= getId("email");
-  var pass=getId("password");
-  var conpass = getId("password2");
-  var name = getId("name");
+  var tel=getId("telefono");
+  var pass=getId("contraseña");
+  var conpass = getId("confirmarcontraseña");
   
   var starCountRef = firebase.database().ref('Usuarios/'+tel);
 starCountRef.once('value', (snapshot) => {
 
   if (snapshot.exists()) {
     console.log(snapshot.val());
-    const id = snapshot.val().tel;
+    const id = snapshot.val().telefono;
     if(id==tel){
-      alert("no se ha podido registrar el correo que ingresaste ya existe");
+      alert("no se ha podido registrar el numero que ingresaste ya existe");
     
     }else{
       
@@ -106,19 +104,18 @@ starCountRef.once('value', (snapshot) => {
   
 function register(){
   var tel=getId("telefono")
-  firebase.database().ref("Usuarios/"+email).set({
-    nombre: encrypt(getId("name"),2),
-    contrase\u00F1a: encrypt(getId("password"), 2),
-    telefono: encrypt(getId("phone"),2),
-    usuario: encrypt("cliente",2),
-    email: encrypt(getId("email"),2)
+  firebase.database().ref("Usuarios/"+tel).set({
+    nombre: encrypt(getId("nombre"),2),
+    contrase\u00F1a: encrypt(getId("contraseña"), 2),
+    telefono: encrypt(getId("telefono"),2),
+    usuario: encrypt("cliente",2)
   });
 
 
 
 
   alert("registrado");
-  console.log(getId("phone"));
+  console.log(getId("telefono"));
   document.getElementById("form").reset();
 
 }
