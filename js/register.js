@@ -108,7 +108,8 @@ function register(){
     nombre: encrypt(getId("nombre"),2),
     contrase\u00F1a: encrypt(getId("contraseña"), 2),
     telefono: encrypt(getId("telefono"),2),
-    usuario: encrypt("cliente",2)
+    usuario: encrypt("cliente",2),
+    email:encrypt(getId("email"),2)
   });
 
 
@@ -122,7 +123,6 @@ function register(){
 
   function getId(id){
     return document.getElementById(id).value;
-    
   }
     
 
