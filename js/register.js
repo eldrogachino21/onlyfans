@@ -1,6 +1,7 @@
 var config = {
   apiKey: "AIzaSyC1KT3aBbQbx_LTpcdSO995B_f0blI8fzw",
   authDomain: "onlyfansclone-3ada1.firebaseapp.com",
+  databaseURL: "https://onlyfansclone-3ada1-default-rtdb.firebaseio.com",
   projectId: "onlyfansclone-3ada1",
   storageBucket: "onlyfansclone-3ada1.appspot.com",
   messagingSenderId: "1010568675424",
