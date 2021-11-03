@@ -101,7 +101,7 @@
          body{background:white !important;}
        </style>
        
-       <div class="holder">
+       <div class="holder" id="sidebar" class="sidebar">
        
          <div class="card border w-96 hover:shadow-none relative flex flex-col mx-auto shadow-lg m-5">
            <img class="max-h-20 w-full opacity-80 absolute top-0" style="z-index:-1" src="https://unsplash.com/photos/h0Vxgz5tyXA/download?force=true&w=640" alt="" />
@@ -171,7 +171,18 @@
     </section>
    
 
-   
+   <style>
+     
+     .sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
+}	
+   </style>
+   <script>
+      var sidebar = document.getElementById('sidebar');
+Stickyfill.add(sidebar);
+   </script>
 </body>
 
 
