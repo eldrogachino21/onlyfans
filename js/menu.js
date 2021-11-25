@@ -15,8 +15,8 @@ var config = {
     var a ="";
     var l = "";
       function mostrar(){
-          document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';}
-        
+          document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';
+          document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';}
         document.getElementById('file').addEventListener('change', (event) => {
             const file = event.target.files[0];
             const storageRef = firebase.storage().ref('images/' + file.name);
