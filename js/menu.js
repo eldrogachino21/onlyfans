@@ -29,7 +29,6 @@ var config = {
                 const progressBar = document.getElementById('progress_bar');
                 progressBar.value = progress;
 
-                mostrar()
             });
             
             storageRef.getDownloadURL().then(function(url){
