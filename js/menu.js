@@ -22,7 +22,7 @@ var config = {
             const storageRef = firebase.storage().ref('images/' + file.name);
         
             storageRef.put(file).on('state_changed', (snapshot) => {
-              
+              mostrar()
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                 console.log(progress);
         
