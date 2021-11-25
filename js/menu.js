@@ -10,7 +10,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
-$(document).ready(function() {
+
       
     var a ="";
     var l = "";
@@ -38,4 +38,4 @@ $(document).ready(function() {
                       a= url;
             });
         });
-    });
+  
