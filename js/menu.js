@@ -44,5 +44,24 @@ function mostrar(){
             });
             
         });
+function publicar (){
+  var descripcio = document.getElementById("descripcion").value;
+  var d = new Date();
+  var t = d.getTime();
+  var counter= t;
+  counter+=1;
+  let persona = JSON.parse(localStorage.getItem("datos"));
+  let db = firebase.database().ref("publicaciones/"+persona[0].telefono+"/"+counter);
+  let itemdb= {
+      
+      id:counter,
+      imagen: a,
+      categoria: "gratuita",
+      descripcion: descripcio, 
+      fecha: d,
+      hora : t
+  }
 
+  db.set(itemdb);
+}
         
