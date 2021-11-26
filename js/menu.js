@@ -65,3 +65,92 @@ alert("publicado con exito");
   db.set(itemdb);
 }
         
+
+function render(){
+  function HTMLjarabe() {
+
+    var counter = 0;
+    var task = firebase.database().ref("productos/");
+    task.on("child_added", function(data) {
+        var taskV = data.val();
+
+        con = counter += 1;
+        
+
+        if(taskV.categoria=="jarabe"){
+
+        
+        let URL = `${taskV.imagen}`;
+        let btn = `btnjarabe${con}`;
+        document.getElementById('jarabeDiv').innerHTML += `
+ <div id="dat" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+        <img onclick="mostrar(','','${taskV.descripcion}','${URL}','${con}','${btn}')" class="card-img-top" style=" height:16rem; width:16rem;" src="${URL}"
+  alt ="Card image cap">
+   <div class="card-body" >
+    
+       <div align="center">
+      
+       </div>
+    
+        <h5 align="center" class="card-title"</h5>
+       <h6  align="center" class="card-subtitle mb-2 text-muted">Precio: $  </h6>
+       <h5 style="display:block;>${taskV.descripcion}</h5>
+       </div>
+       </div>
+       <div class=" align-item-center">
+                     <div class="btn-group">
+                     <a type="button" onclick="cart2(','','${URL}','${con}','${btn}')"class="btn btn-sm  btn-outline-info" href="cart.html">Comprar</a>
+                     <button id="${btn}" type="button" onclick="cart(','','${URL}','${con}','${btn}')"class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
+                      </div>
+
+             </div> 
+        </div>
+         </div>`;
+        }
+    });
+    task.on("child_changed", function(data) {
+
+        var taskV = data.val();
+
+        con = counter += 1;
+        
+
+        if(taskV.categoria=="jarabe"){
+
+        document.getElementById("data"+taskV.ProductNombre).remove()
+        let URL = `${taskV.imagen}`;
+        let btn = `btnjarabe${con}`;
+        document.getElementById('jarabeDiv').innerHTML += `
+        <div id="dat" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+               <img onclick="mostrar(','${taskV.descripcion}','${URL}','${con}','${btn}')" class="card-img-top" style=" height:16rem; width:16rem;" src="${URL}"
+         alt ="Card image cap">
+          <div class="card-body" >
+           
+              <div align="center">
+             
+              </div>
+           
+               <h5 align="center" class="card-title"</h5>
+              <h6  align="center" class="card-subtitle mb-2 text-muted">Precio: $  </h6>
+              <h5 style="display:block;>${taskV.descripcion}</h5>
+              </div>
+              </div>
+              <div class=" align-item-center">
+                            <div class="btn-group">
+                            <a type="button" onclick="cart2(','${URL}','${con}','${btn}')"class="btn btn-sm  btn-outline-info" href="cart.html">Comprar</a>
+                            <button id="${btn}" type="button" onclick="cart(','${URL}','${con}','${btn}')"class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
+                             </div>
+       
+                    </div> 
+               </div>
+                </div>`;
+        }
+    });
+    var task = firebase.database().ref("productos/");
+    task.on("child_removed", function(data) {
+        var taskV = data.val();
+        document.getElementById("data"+taskV.ProductNombre).remove()
+
+    });
+}
+}
