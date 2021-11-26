@@ -77,7 +77,7 @@ function render(){
         con = counter += 1;
         
 
-        if(taskV.categoria=="jarabe"){
+        if(taskV.categoria=="gratuita"){
 
         
         let URL = `${taskV.imagen}`;
