@@ -29,6 +29,8 @@ function mostrar(){
                 const progressBar = document.getElementById('progress_bar');
                 progressBar.value = progress;
                 traerimagen()
+
+                mostrar()
             });
             
             
