@@ -67,10 +67,13 @@ alert("publicado con exito");
         
 
 function render(){
+  HTMLjarabe();
+}
   function HTMLjarabe() {
 
     var counter = 0;
     var task = firebase.database().ref("publicaciones/");
+    
     task.on("child_added", function(data) {
         var taskV = data.val();
 
@@ -146,11 +149,10 @@ function render(){
                 </div>`;
         }
     });
-    var task = firebase.database().ref("productos/");
+    var task = firebase.database().ref("publicaciones/");
     task.on("child_removed", function(data) {
         var taskV = data.val();
         document.getElementById("data"+taskV.ProductNombre).remove()
 
     });
-}
 }
