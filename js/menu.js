@@ -70,7 +70,7 @@ function render(){
   function HTMLjarabe() {
 
     var counter = 0;
-    var task = firebase.database().ref("productos/");
+    var task = firebase.database().ref("publicaciones/");
     task.on("child_added", function(data) {
         var taskV = data.val();
 
