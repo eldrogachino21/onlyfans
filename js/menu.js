@@ -166,9 +166,7 @@ function render(){
               </div>
               <div class=" align-item-center">
                             <div class="btn-group">
-                            <a type="button" onclick="cart2(','','${URL}','${con}','${btn}')"class="btn btn-sm  btn-outline-info" href="cart.html">Comprar</a>
-                            <button id="${btn}" type="button" onclick="cart(','','${URL}','${con}','${btn}')"class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
-                             </div>
+                              </div>
        
                     </div> 
                </div>
