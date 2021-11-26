@@ -93,7 +93,7 @@ function render(){
         let btn = `btnjarabe${con}`;
         document.getElementById('jarabeDiv').innerHTML += `
  <div id="dat" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:23rem; width:23rem;" src="${URL}"
+        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
   alt ="Card image cap">
    <div class="card-body" >
     
