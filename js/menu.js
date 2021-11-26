@@ -77,7 +77,11 @@ function render(){
     var task = firebase.database().ref("publicaciones/");
     
     task.on("child_added", function(data) {
-        var taskV = data.val();
+        
+      data.forEach(element => {
+        
+      
+      var taskV = element.val();
 
         con = counter += 1;
         
@@ -113,6 +117,8 @@ function render(){
          </div>`;
        // }
     });
+
+  });
     task.on("child_changed", function(data) {
 
         var taskV = data.val();
