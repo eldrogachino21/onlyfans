@@ -86,7 +86,7 @@ function render(){
         con = counter += 1;
         
 
-       // if(taskV.categoria=="gratuita"){
+        if(taskV.categoria=="gratuita"){
 
         
         let URL = `${taskV.imagen}`;
@@ -115,25 +115,28 @@ function render(){
              </div> 
         </div>
          </div>`;
-       // }
+        }
     });
 
   });
     task.on("child_changed", function(data) {
 
-        var taskV = data.val();
+      data.forEach(element => {
+        
+      
+        var taskV = element.val();
 
         con = counter += 1;
         
-
-        if(taskV.categoria=="jarabe"){
+        if(taskV.categoria=="gratuita"){
+        
 
         document.getElementById("data"+taskV.ProductNombre).remove()
         let URL = `${taskV.imagen}`;
         let btn = `btnjarabe${con}`;
         document.getElementById('jarabeDiv').innerHTML += `
         <div id="dat" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-               <img onclick="mostrar(','${taskV.descripcion}','${URL}','${con}','${btn}')" class="card-img-top" style=" height:16rem; width:16rem;" src="${URL}"
+               <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
          alt ="Card image cap">
           <div class="card-body" >
            
@@ -142,21 +145,24 @@ function render(){
               </div>
            
                <h5 align="center" class="card-title"</h5>
-              <h6  align="center" class="card-subtitle mb-2 text-muted">Precio: $  </h6>
+              <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
               <h5 style="display:block;>${taskV.descripcion}</h5>
               </div>
               </div>
               <div class=" align-item-center">
                             <div class="btn-group">
-                            <a type="button" onclick="cart2(','${URL}','${con}','${btn}')"class="btn btn-sm  btn-outline-info" href="cart.html">Comprar</a>
-                            <button id="${btn}" type="button" onclick="cart(','${URL}','${con}','${btn}')"class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
+                            <a type="button" onclick="cart2(','','${URL}','${con}','${btn}')"class="btn btn-sm  btn-outline-info" href="cart.html">Comprar</a>
+                            <button id="${btn}" type="button" onclick="cart(','','${URL}','${con}','${btn}')"class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
                              </div>
        
                     </div> 
                </div>
                 </div>`;
         }
+        });
+    
     });
+  
     var task = firebase.database().ref("publicaciones/");
     task.on("child_removed", function(data) {
         var taskV = data.val();
