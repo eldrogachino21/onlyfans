@@ -123,11 +123,11 @@ function cards(){
       </div>
     </div>
     `;
-      }
+      
   });
 
 });
- 
+}
 
   function HTMLjarabe() {
 
