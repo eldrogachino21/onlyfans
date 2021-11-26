@@ -18,14 +18,14 @@ var config = {
 function nuevapubli(){
   document.getElementById("myItems").innerHTML=""
   document.getElementById("myItems").innerHTML+='<br><h2 id="publicacion">publicacion</h2><div><div align="left"><div id="hola" class="container">    </div>    <div id="progreso">    </div> <form >    <input id="descripcion" class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Escribir una nueva publicacion" style="height: 100px;width: 500px;">                                                                                                                      <div align="left">    <div  class="container">        <input type="file" id="file">    </div></div>                                                                                                                   </form>' 
-document.getElementById("miitem").innerHTML+=""
+document.getElementById("miitem").innerHTML=""
 document.getElementById("miitem").innerHTML+='<button data-modal-toggle="example2" onclick="publicar()" data-modal-action="open" class="bg-purple-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-purple-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2" style="      margin-left: 163px;      align-items: margin;      width: 187px;      float: right;  ">publicar </button>'
 document.getElementById("content").innerHTML=""
 }
 
 function inicio(){
   document.getElementById("myItems").innerHTML=""
-  document.getElementById("miitem").innerHTML+=""
+  document.getElementById("miitem").innerHTML=""
   document.getElementById("content").innerHTML=""
   document.getElementById("content").innerHTML+='<div class="row" id="jarabeDiv"></div><h2 id="pastillas">Publicaciones</h2><hr><div class="row" id="pastillasDiv"></div><h2 style="color: rgb(226, 241, 255);" id="comprimidos">Capsulas</h2>      <hr><div class="row" id="comprimidosDiv"></div>      <h2 style="color: rgb(226, 241, 255);" id="polvos">Polvos</h2>      <hr>      <div class="row" id="polvosDiv"></div><h2 style="color: rgb(226, 241, 255);" id="polvos"></h2><hr class="featurette-divider"></hr>'
 render()
