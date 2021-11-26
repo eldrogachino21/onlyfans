@@ -68,7 +68,9 @@ alert("publicado con exito");
 
 function render(){
   HTMLjarabe();
+  console.log("hola")
 }
+
   function HTMLjarabe() {
 
     var counter = 0;
