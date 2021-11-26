@@ -82,7 +82,7 @@ function render(){
         con = counter += 1;
         
 
-        if(taskV.categoria=="gratuita"){
+       // if(taskV.categoria=="gratuita"){
 
         
         let URL = `${taskV.imagen}`;
@@ -111,7 +111,7 @@ function render(){
              </div> 
         </div>
          </div>`;
-        }
+       // }
     });
     task.on("child_changed", function(data) {
 
