@@ -14,6 +14,11 @@ var config = {
       
     var a ="";
     var l = "";
+
+function nuevapubli(){
+  document.getElementById("").innerHTML+='<br><h2 id="publicacion">publicacion</h2><div><div align="left"><div id="hola" class="container">    </div>    <div id="progreso">    </div> <form >    <input id="descripcion" class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Escribir una nueva publicacion" style="height: 100px;width: 500px;">                                                                                                                      <div align="left">    <div  class="container">        <input type="file" id="file">    </div></div>                                                                                                                   </form>' 
+}
+
 function mostrar(){
           document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';
           document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';}
