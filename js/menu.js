@@ -61,7 +61,7 @@ function publicar (){
       fecha: d,
       hora : t
   }
-
+alert("publicado con exito");
   db.set(itemdb);
 }
         
