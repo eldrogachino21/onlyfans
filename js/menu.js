@@ -28,11 +28,13 @@ function mostrar(){
         
                 const progressBar = document.getElementById('progress_bar');
                 progressBar.value = progress;
-                traerimagen()
+               
 
-                mostrar()
             });
-            
+            storageRef.put(file).on('state_changed', (snapshot) => {
+
+              
+            });
             
         });
 
