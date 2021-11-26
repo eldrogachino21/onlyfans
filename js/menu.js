@@ -16,7 +16,7 @@ var config = {
     var l = "";
 
 function nuevapubli(){
-  document.getElementById("").innerHTML+='<br><h2 id="publicacion">publicacion</h2><div><div align="left"><div id="hola" class="container">    </div>    <div id="progreso">    </div> <form >    <input id="descripcion" class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Escribir una nueva publicacion" style="height: 100px;width: 500px;">                                                                                                                      <div align="left">    <div  class="container">        <input type="file" id="file">    </div></div>                                                                                                                   </form>' 
+  document.getElementById("myItems").innerHTML+='<br><h2 id="publicacion">publicacion</h2><div><div align="left"><div id="hola" class="container">    </div>    <div id="progreso">    </div> <form >    <input id="descripcion" class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Escribir una nueva publicacion" style="height: 100px;width: 500px;">                                                                                                                      <div align="left">    <div  class="container">        <input type="file" id="file">    </div></div>                                                                                                                   </form>' 
 }
 
 function mostrar(){
