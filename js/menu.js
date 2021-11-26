@@ -92,7 +92,7 @@ function render(){
         let URL = `${taskV.imagen}`;
         let btn = `btnjarabe${con}`;
         document.getElementById('jarabeDiv').innerHTML += `
- <div id="data" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+ <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
         <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
   alt ="Card image cap">
    <div class="card-body" >
@@ -131,11 +131,11 @@ function render(){
         if(taskV.categoria=="gratuita"){
         
 
-        document.getElementById("data"+taskV.ProductNombre).remove()
+        document.getElementById("data"+taskV.id).remove()
         let URL = `${taskV.imagen}`;
         let btn = `btnjarabe${con}`;
         document.getElementById('jarabeDiv').innerHTML += `
-        <div id="data" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+        <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
                <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
          alt ="Card image cap">
           <div class="card-body" >
@@ -166,7 +166,7 @@ function render(){
     var task = firebase.database().ref("publicaciones/");
     task.on("child_removed", function(data) {
         var taskV = data.val();
-        document.getElementById("data"+taskV.ProductNombre).remove()
+        document.getElementById("data"+taskV.id).remove()
 
     });
 }
