@@ -80,10 +80,15 @@ function mostrar(){
       });
 
 function publicar (){
+  var precio = document.getElementById("precio").value;
   var descripcio = document.getElementById("descripcion").value;
   var d = new Date();
   var t = d.getTime();
   var counter= t;
+  var categoria = "costo"
+  if(precio==""){
+    categoria = "gratuita"
+  }
   counter+=1;
   let persona = JSON.parse(localStorage.getItem("datos"));
   let db = firebase.database().ref("publicaciones/"+persona[0].telefono+"/"+counter);
@@ -91,7 +96,8 @@ function publicar (){
       
       id:counter,
       imagen: a,
-      categoria: "gratuita",
+      categoria: categoria,
+      precio, precio,
       descripcion: descripcio, 
       fecha: d,
       hora : t
@@ -239,4 +245,111 @@ function cards(){
         document.getElementById("data"+taskV.id).remove()
 
     });
+
+
+    var counter = 0;
+    var task = firebase.database().ref("publicaciones/");
+    
+    task.on("child_added", function(data) {
+        
+      data.forEach(element => {
+        
+      
+      var taskV = element.val();
+
+        con = counter += 1;
+        
+
+        if(taskV.categoria=="costo"){
+
+        
+        let URL = `${taskV.imagen}`;
+        let btn = `btnjarabe${con}`;
+        document.getElementById('jarabeDiv').innerHTML += `
+ <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
+  alt ="Card image cap">
+   <div class="card-body" >
+    
+       <div align="center">
+      
+       </div>
+    
+        <h5 align="center" class="card-title"</h5>
+       <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+       <h5 style="display:block;>${taskV.descripcion}</h5>
+      <span class="inline-flex bg-pink-600 text-white rounded-full h-6 px-3 justify-center items-center" href="pagar.html">${taskV.precio}</span>
+
+       </div>
+       </div>
+       <div class=" align-item-center">
+                     <div class="btn-group">
+                                          </div>
+
+             </div> 
+        </div>
+         </div>`;
+        }
+    });
+
+  });
+    task.on("child_changed", function(data) {
+
+      data.forEach(element => {
+        
+      
+        var taskV = element.val();
+
+        con = counter += 1;
+        
+        if(taskV.categoria=="costo"){
+        
+
+        document.getElementById("data"+taskV.id).remove()
+        let URL = `${taskV.imagen}`;
+        let btn = `btnjarabe${con}`;
+        document.getElementById('jarabeDiv').innerHTML += `
+        <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+               <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
+         alt ="Card image cap">
+          <div class="card-body" >
+           
+              <div align="center">
+             
+              </div>
+           
+               <h5 align="center" class="card-title"</h5>
+              <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+              <div class="-m-2 text-center">
+  <div class="p-2">
+    <div class="inline-flex items-center bg-white leading-none text-pink-600 rounded-full p-2 shadow text-teal text-sm">
+      <span class="inline-flex bg-pink-600 text-white rounded-full h-6 px-3 justify-center items-center" href="pagar.html">${taskV.precio}</span>
+    </div>
+  </div>
+              <h5 style="display:block;>${taskV.descripcion}</h5>
+              </div>
+              </div>
+              <div class=" align-item-center">
+                            <div class="btn-group">
+                              </div>
+       
+                    </div> 
+               </div>
+                </div>`;
+        }
+        });
+    
+    });
+  
+    var task = firebase.database().ref("publicaciones/");
+    task.on("child_removed", function(data) {
+        var taskV = data.val();
+        document.getElementById("data"+taskV.id).remove()
+
+    });
   }
+
+
+
+
+
