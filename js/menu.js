@@ -13,6 +13,24 @@ function myFunction() {
         
     }
  
+function pagar(tokens){
+
+  
+    var item={
+      tokens:tokens
+    }
+    info.push(item);
+    let storage = JSON.parse(localStorage.getItem("tokens"));
+    if (storage==null) {
+      products.push(item);
+      localStorage.setItem("tokens",JSON.stringify(products));
+    }else{
+      products= JSON.parse(localStorage.clear("tokens"));
+      products.push(item);
+      localStorage.setItem("tokens",JSON.stringify(products));
+    }
+  }
+
 function perfil(){
   myFunction()
   document.getElementById("progreso").innerHTML=""
@@ -278,7 +296,7 @@ function cards(){
         <h5 align="center" class="card-title"</h5>
        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
        <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" href="pagar.html">${taskV.precio}</span>
+       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar(${taskV.id})" href="pagar.html">${taskV.precio}</span>
 
        </div>
        </div>
@@ -322,7 +340,7 @@ function cards(){
               <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
               <div class="-m-2 text-center">
   <div class="p-2">
-      <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" href="pagar.html">${taskV.precio}</span>
+      <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" onclick="pagar(${taskV.id})" href="pagar.html">${taskV.precio}</span>
   </div>
               <h5 style="display:block;>${taskV.descripcion}</h5>
               </div>
@@ -345,6 +363,11 @@ function cards(){
         document.getElementById("data"+taskV.id).remove()
 
     });
+
+
+
+
+    
   }
 
 
