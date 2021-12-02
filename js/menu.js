@@ -97,7 +97,7 @@ function cards(){
     
     var taskV = element.val();
 
-      con = counter += 1;
+   
       
 
       
