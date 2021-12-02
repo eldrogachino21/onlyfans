@@ -10,9 +10,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  $("#upfile1").click(function () {
-    $("#file1").trigger('click');
-});
+  
       
     var a ="";
     var l = "";
