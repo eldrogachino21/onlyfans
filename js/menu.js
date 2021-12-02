@@ -12,8 +12,7 @@ var config = {
 
   
       
-    var a ="";
-    var l = "";
+ 
 
 function nuevapubli(){
   document.getElementById("myItems").innerHTML=""
@@ -30,39 +29,32 @@ function inicio(){
   document.getElementById("content").innerHTML+='<h1>Inicio</h1><div class="row" id="jarabeDiv"></div><h2 id="pastillas">Publicaciones</h2><hr><div class="row" id="pastillasDiv"></div><h2 style="color: rgb(226, 241, 255);" id="comprimidos">Capsulas</h2>      <hr><div class="row" id="comprimidosDiv"></div>      <h2 style="color: rgb(226, 241, 255);" id="polvos">Polvos</h2>      <hr>      <div class="row" id="polvosDiv"></div><h2 style="color: rgb(226, 241, 255);" id="polvos"></h2><hr class="featurette-divider"></hr>'
 render()
 }
-$(document).ready(function() {
-function mostrar(){
-          document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';
-          document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';
-        }
-        document.getElementById('file').addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            const storageRef = firebase.storage().ref('images/' + file.name);
-        
-            storageRef.put(file).on('state_changed', (snapshot) => {
-              mostrar()
-                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log(progress);
-        
-                const progressBar = document.getElementById('progress_bar');
-                progressBar.value = progress;
-               
-
-            });
-            storageRef.put(file).on('state_changed', (snapshot) => {
-              const storageRef = firebase.storage().ref('images/' + file.name);
-              storageRef.getDownloadURL().then(function(url){
-                    
-                const image = document.getElementById('image');
-                console.log(url);
-                image.src = url
-                      a= url;
-            });
+var a ="";
+  var l = "";
+    function mostrar(){
+        document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';}
+      
+      document.getElementById('file').addEventListener('change', (event) => {
+          const file = event.target.files[0];
+          const storageRef = firebase.storage().ref('images/' + file.name);
+      
+          storageRef.put(file).on('state_changed', (snapshot) => {
+            mostrar()
+              const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log(progress);
+      
+              const progressBar = document.getElementById('progress_bar');
+              progressBar.value = progress;
+          });
+          
+          storageRef.getDownloadURL().then(function(url){
               
-            });
-            
-        });
-});
+              const image = document.getElementById('image');
+              console.log(url);
+              image.src = url
+                    a= url;
+          });
+      });
 function publicar (){
   var descripcio = document.getElementById("descripcion").value;
   var d = new Date();
