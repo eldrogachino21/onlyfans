@@ -35,11 +35,8 @@ function mostrar(){
           document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';
         }
 
-        var archivo = document.getElementById("file");
-if(archivo)
-{
-  alert("archivo")
-        archivo.addEventListener('change', (event) => {
+        
+        document.getElementById('file').addEventListener('change', (event) => {
             const file = event.target.files[0];
             const storageRef = firebase.storage().ref('images/' + file.name);
         
@@ -66,7 +63,7 @@ if(archivo)
             });
             
         });
-      }
+
 function publicar (){
   var descripcio = document.getElementById("descripcion").value;
   var d = new Date();
