@@ -270,13 +270,13 @@ function cards(){
     var task = firebase.database().ref("publicaciones/");
     
     task.on("child_added", function(data) {
-        
+      con = 0;
       data.forEach(element => {
         
       
       var taskV = element.val();
 
-        con = counter += 1;
+        
         
 
         if(taskV.categoria=="costo"){
@@ -309,7 +309,7 @@ function cards(){
         </div>
          </div>`;
          
-       if(tokens[0].tokens==taskV.id){
+       if(tokens[con].tokens==taskV.id){
         document.getElementById("data"+taskV.id).remove()
           document.getElementById('jarabeDiv').innerHTML += `
           <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
@@ -335,17 +335,18 @@ function cards(){
                   </div>`;
         }
       }
+      con = counter += 1;
     });
 
   });
     task.on("child_changed", function(data) {
-
+      con = 0;
       data.forEach(element => {
         
       
         var taskV = element.val();
 
-        con = counter += 1;
+        
         
         if(taskV.categoria=="costo"){
         
@@ -377,7 +378,7 @@ function cards(){
           </div>
            </div>`;
            
-         if(tokens[0].tokens==taskV.id){
+         if(tokens[con].tokens==taskV.id){
           document.getElementById("data"+taskV.id).remove()
             document.getElementById('jarabeDiv').innerHTML += `
             <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
@@ -403,6 +404,7 @@ function cards(){
                     </div>`;
           }
         }
+        con = counter += 1;
         });
     
     });
