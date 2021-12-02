@@ -19,6 +19,7 @@ render()
 }
 
 function mostrar(){
+  nuevapubli()
   document.getElementById("content").innerHTML=""
           document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';
           document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';
