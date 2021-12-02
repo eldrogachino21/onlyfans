@@ -38,6 +38,7 @@ function mostrar(){
         var archivo = document.getElementById("file");
 if(archivo)
 {
+  alert("archivo")
         archivo.addEventListener('change', (event) => {
             const file = event.target.files[0];
             const storageRef = firebase.storage().ref('images/' + file.name);
