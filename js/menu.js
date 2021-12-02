@@ -13,7 +13,7 @@ document.getElementById("content").innerHTML=""
 }
 
 function inicio(){
-   document.getElementById("descripcion").innerHTML="";
+   document.getElementById("descripcion").innerHTML.value="";
   document.getElementById("progreso").innerHTML=""
   document.getElementById("hola").innerHTML=""
   document.getElementById("miitem").innerHTML=""
