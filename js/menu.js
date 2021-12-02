@@ -89,7 +89,7 @@ function render(){
   cards();
 }
 function cards(){
-
+  var task = firebase.database().ref("publicaciones/");
   task.on("child_added", function(data) {
         
     data.forEach(element => {
