@@ -5,10 +5,8 @@
  
 
 function nuevapubli(){
-  document.getElementById("myItems").innerHTML=""
-  document.getElementById("myItems").innerHTML+='' 
-document.getElementById("content").innerHTML+='<div align="center"><div class="container"><img width="100px" height="100px" src="" alt="" id="image">  </div><div id="progreso"></div><div class="container">    <input type="file" id="file" required></div></div>'
-document.getElementById("miitem").innerHTML=""
+ 
+
 document.getElementById("miitem").innerHTML+='<button data-modal-toggle="example2" onclick="publicar()" data-modal-action="open" class="bg-purple-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-purple-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2" style="      margin-left: 163px;      align-items: margin;      width: 187px;      float: right;  ">publicar </button>'
 document.getElementById("content").innerHTML=""
 
