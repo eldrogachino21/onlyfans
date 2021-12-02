@@ -99,7 +99,7 @@ starCountRef.once('value', (snapshot) => {
   //Redireccionamiento tras 5 segundos
   
 
-  //location.href="index.html";
+  location.href="menu.html";
  
 }else{
  alert("los datos no coinciden con los de la cuenta registrada");
