@@ -278,7 +278,7 @@ function cards(){
         <h5 align="center" class="card-title"</h5>
        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
        <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" href="pagar.html">${taskV.precio}</span>
+       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" href="pagar.html">${taskV.precio}</span>
 
        </div>
        </div>
@@ -322,7 +322,7 @@ function cards(){
               <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
               <div class="-m-2 text-center">
   <div class="p-2">
-      <span align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" href="pagar.html">${taskV.precio}</span>
+      <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" href="pagar.html">${taskV.precio}</span>
   </div>
               <h5 style="display:block;>${taskV.descripcion}</h5>
               </div>
