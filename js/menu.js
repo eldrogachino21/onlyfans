@@ -86,7 +86,7 @@ alert("publicado con exito");
 function render(){
   HTMLjarabe();
   console.log("hola")
-  cards();
+  
 }
 function cards(){
   var task = firebase.database().ref("publicaciones/");
