@@ -10,7 +10,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  
+  $(document).ready(function() {
       
     var a ="";
     var l = "";
@@ -33,7 +33,8 @@ render()
 
 function mostrar(){
           document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';
-          document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';}
+          document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';
+        }
         document.getElementById('file').addEventListener('change', (event) => {
             const file = event.target.files[0];
             const storageRef = firebase.storage().ref('images/' + file.name);
@@ -61,6 +62,7 @@ function mostrar(){
             });
             
         });
+      
 function publicar (){
   var descripcio = document.getElementById("descripcion").value;
   var d = new Date();
@@ -222,3 +224,4 @@ function cards(){
 
     });
 }
+  });
