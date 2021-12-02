@@ -1,9 +1,17 @@
 
 
   
-      
+      function myFunction() {
+        var x = document.getElementById("myItems");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
  
 function perfil(){
+  myFunction()
   document.getElementById("progreso").innerHTML=""
   document.getElementById("hola").innerHTML=""
   document.getElementById("miitem").innerHTML=""
@@ -18,6 +26,7 @@ document.getElementById("content").innerHTML=""
 }
 
 function inicio(){
+  myFunction()
    document.getElementById("descripcion").innerHTML.value="";
   document.getElementById("progreso").innerHTML=""
   document.getElementById("hola").innerHTML=""
