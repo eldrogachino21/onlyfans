@@ -280,7 +280,7 @@ function cards(){
         
 
         if(taskV.categoria=="costo"){
-        if(tokens==null){
+        
         
         let URL = `${taskV.imagen}`;
         let btn = `btnjarabe${con}`;
@@ -308,8 +308,9 @@ function cards(){
              </div> 
         </div>
          </div>`;
-        }
-       else if(tokens.tokens==taskV.id){
+         
+       if(tokens.tokens==taskV.id){
+        document.getElementById("data"+taskV.id).remove()
           document.getElementById('jarabeDiv').innerHTML += `
           <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
                  <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
@@ -348,36 +349,59 @@ function cards(){
         
         if(taskV.categoria=="costo"){
         
-
-        document.getElementById("data"+taskV.id).remove()
-        let URL = `${taskV.imagen}`;
-        let btn = `btnjarabe${con}`;
-        document.getElementById('jarabeDiv').innerHTML += `
-        <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-               <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
-         alt ="Card image cap">
-          <div class="card-body" >
+        
+          let URL = `${taskV.imagen}`;
+          let btn = `btnjarabe${con}`;
+          document.getElementById('jarabeDiv').innerHTML += `
+   <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+          <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
+    alt ="Card image cap">
+     <div class="card-body" >
+      
+         <div align="center">
+        
+         </div>
+      
+          <h5 align="center" class="card-title"</h5>
+         <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+         <h5 style="display:block;>${taskV.descripcion}</h5>
+         <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar(${taskV.id})" href="pagar.html">${taskV.precio}</span>
+  
+         </div>
+         </div>
+         <div class=" align-item-center">
+                       <div class="btn-group">
+                                            </div>
+  
+               </div> 
+          </div>
+           </div>`;
            
-              <div align="center">
-             
-              </div>
+         if(tokens.tokens==taskV.id){
+          document.getElementById("data"+taskV.id).remove()
+            document.getElementById('jarabeDiv').innerHTML += `
+            <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+                   <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
+             alt ="Card image cap">
+              <div class="card-body" >
+               
+                  <div align="center">
+                 
+                  </div>
+               
+                   <h5 align="center" class="card-title"</h5>
+                  <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+                  <h5 style="display:block;>${taskV.descripcion}</h5>
+                  </div>
+                  </div>
+                  <div class=" align-item-center">
+                                <div class="btn-group">
+                                                     </div>
            
-               <h5 align="center" class="card-title"</h5>
-              <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-              <div class="-m-2 text-center">
-  <div class="p-2">
-      <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center" onclick="pagar(${taskV.id})" href="pagar.html">${taskV.precio}</span>
-  </div>
-              <h5 style="display:block;>${taskV.descripcion}</h5>
-              </div>
-              </div>
-              <div class=" align-item-center">
-                            <div class="btn-group">
-                              </div>
-       
-                    </div> 
-               </div>
-                </div>`;
+                        </div> 
+                   </div>
+                    </div>`;
+          }
         }
         });
     
