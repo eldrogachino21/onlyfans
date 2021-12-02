@@ -267,7 +267,7 @@ function cards(){
         let btn = `btnjarabe${con}`;
         document.getElementById('jarabeDiv').innerHTML += `
  <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://giphy.com/embed/3eCMwCa0GYEFmvmI55"
+        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
   alt ="Card image cap">
    <div class="card-body" >
     
@@ -310,7 +310,7 @@ function cards(){
         let btn = `btnjarabe${con}`;
         document.getElementById('jarabeDiv').innerHTML += `
         <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-               <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://giphy.com/embed/3eCMwCa0GYEFmvmI55"
+               <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
          alt ="Card image cap">
           <div class="card-body" >
            
