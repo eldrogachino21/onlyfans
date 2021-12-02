@@ -29,7 +29,7 @@ document.getElementById("content").innerHTML=""
 }
 
 function inicio(){
-  myFunction()
+  myFunction1()
    document.getElementById("descripcion").innerHTML.value="";
   document.getElementById("progreso").innerHTML=""
   document.getElementById("hola").innerHTML=""
