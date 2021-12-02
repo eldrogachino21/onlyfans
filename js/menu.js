@@ -12,7 +12,8 @@ function myFunction() {
             x.style.display = "block";
         
     }
- 
+    var products=[];
+    var info=[];
 function pagar(tokens){
 
   
