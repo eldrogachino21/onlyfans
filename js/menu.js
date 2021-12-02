@@ -36,7 +36,7 @@ function mostrar(){
               const progressBar = document.getElementById('progress_bar');
               progressBar.value = progress;
           });
-          
+          storageRef.put(file).on('state_changed', (snapshot) => {
           storageRef.getDownloadURL().then(function(url){
               
               const image = document.getElementById('image');
@@ -44,6 +44,7 @@ function mostrar(){
               image.src = url
                     a= url;
           });
+        });
       });
 
 function publicar (){
