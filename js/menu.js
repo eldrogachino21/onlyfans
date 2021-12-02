@@ -10,7 +10,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  $(document).ready(function() {
+  
       
     var a ="";
     var l = "";
@@ -30,7 +30,7 @@ function inicio(){
   document.getElementById("content").innerHTML+='<h1>Inicio</h1><div class="row" id="jarabeDiv"></div><h2 id="pastillas">Publicaciones</h2><hr><div class="row" id="pastillasDiv"></div><h2 style="color: rgb(226, 241, 255);" id="comprimidos">Capsulas</h2>      <hr><div class="row" id="comprimidosDiv"></div>      <h2 style="color: rgb(226, 241, 255);" id="polvos">Polvos</h2>      <hr>      <div class="row" id="polvosDiv"></div><h2 style="color: rgb(226, 241, 255);" id="polvos"></h2><hr class="featurette-divider"></hr>'
 render()
 }
-
+$(document).ready(function() {
 function mostrar(){
           document.getElementById('progreso').innerHTML = ' <progress id="progress_bar" value="0" max="100"></progress>';
           document.getElementById('hola').innerHTML = ' <img width="100px" height="100px" src="" alt="" id="image">';
@@ -62,7 +62,7 @@ function mostrar(){
             });
             
         });
-      
+});
 function publicar (){
   var descripcio = document.getElementById("descripcion").value;
   var d = new Date();
@@ -223,5 +223,4 @@ function cards(){
         document.getElementById("data"+taskV.id).remove()
 
     });
-}
-  });
+  }
