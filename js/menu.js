@@ -3,7 +3,12 @@
   
       
  
-
+function perfil(){
+  document.getElementById("progreso").innerHTML=""
+  document.getElementById("hola").innerHTML=""
+  document.getElementById("miitem").innerHTML=""
+  document.getElementById("content").innerHTML=""
+}
 function nuevapubli(){
  
 
