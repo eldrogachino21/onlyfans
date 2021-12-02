@@ -279,7 +279,7 @@ function cards(){
         
 
         if(taskV.categoria=="costo"){
-        if(tokens[0].tokens==""){
+        
         
         let URL = `${taskV.imagen}`;
         let btn = `btnjarabe${con}`;
@@ -307,7 +307,7 @@ function cards(){
              </div> 
         </div>
          </div>`;
-        }else if(tokens[0].tokens==taskV.id){
+       if(tokens[0].tokens==taskV.id){
           document.getElementById('jarabeDiv').innerHTML += `
           <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
                  <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
