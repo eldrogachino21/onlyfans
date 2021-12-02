@@ -32,7 +32,7 @@ starCountRef.once('value', (snapshot) => {
       
       if(pass==conpass){
         register();
-        location.replace('login.html');
+        location.replace('index.html');
       }else{
         alert("las contraseñas no concuerdan")
       }
@@ -42,7 +42,7 @@ starCountRef.once('value', (snapshot) => {
   } else {
     if(pass==conpass){
       register();
-      location.replace('login.html');
+      location.replace('index.html');
     }else{
       alert("las contraseñas no concuerdan")
     }
