@@ -270,7 +270,7 @@ function cards(){
     var task = firebase.database().ref("publicaciones/");
     
     task.on("child_added", function(data) {
-      con = 0;
+      
       data.forEach(element => {
         
       
@@ -340,7 +340,7 @@ function cards(){
 
   });
     task.on("child_changed", function(data) {
-      con = 0;
+     
       data.forEach(element => {
         
       
