@@ -74,6 +74,7 @@ alert("publicado con exito");
 
 function render(){
   HTMLjarabe();
+  nuevapubli();
   console.log("hola")
   cards()
 }
