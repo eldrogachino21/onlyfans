@@ -1,12 +1,12 @@
 
-function myFunction1() {
+function myFunction() {
   var x = document.getElementById("myItems");
   
       x.style.display = "none";
   
 }
   
-      function myFunction() {
+      function myFunction1() {
         var x = document.getElementById("myItems");
         
             x.style.display = "block";
