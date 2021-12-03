@@ -108,12 +108,15 @@ function publicar (){
   if(precio==""){
     categoria = "gratuita"
   }
+
   counter+=1;
   let persona = JSON.parse(localStorage.getItem("datos"));
+  var pt=persona[0].telefono
   let db = firebase.database().ref("publicaciones/"+persona[0].telefono+"/"+counter);
   let itemdb= {
       
       id:counter,
+      user:pt,
       imagen: a,
       categoria: categoria,
       precio, precio,
