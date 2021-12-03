@@ -133,12 +133,10 @@ function actualizar(){
     
     var taskV = data.val();
     
-    alert(taskV)
   
-  alert(taskV.pagado)
   var item={
-   user:taskV.user,
-   pagado:taskV.pagado
+   user:taskV.value().user,
+   pagado:taskV.value().pagado
 
   }
   info.push(item);
