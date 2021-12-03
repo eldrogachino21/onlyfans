@@ -131,7 +131,7 @@ function actualizar(){
     
       
     
-    var taskV = element.val();
+    var taskV = data.val();
     
     alert(taskV)
   
