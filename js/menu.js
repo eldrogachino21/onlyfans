@@ -145,7 +145,7 @@ function actualizar(){
     products.push(item);
     localStorage.setItem("tokens",JSON.stringify(products));
   }else{
-    products= JSON.parse(localStorage.clear("tokens"));
+    products= JSON.parse(localStorage.removeItem("tokens"));
     products.push(item);
     localStorage.setItem("tokens",JSON.stringify(products));
   }
