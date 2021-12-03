@@ -64,10 +64,11 @@ function perfil(){
       </div>
       <img class="w-28 h-28 p-1 bg-white rounded-full" src="${taskV.imagen1}" alt=""/>
     <input type="file" id="file3">
-    <input id="nombre" type="text" placeholder="nombre" class="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-indigo-500 shadow-md focus:outline-none focus:border-indigo-600" /> 
-    <button onclick="perfil2()" data-modal-toggle="example2" data-modal-action="open" class="bg-purple-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-purple-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2" style="
      
     </div>
+    <input id="nombre" type="text" placeholder="nombre" class="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-indigo-500 shadow-md focus:outline-none focus:border-indigo-600" /> 
+    <button onclick="perfil2()" data-modal-toggle="example2" data-modal-action="open" class="bg-purple-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-purple-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2" style="
+    
 </div>
 
 `;
