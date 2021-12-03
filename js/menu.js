@@ -333,7 +333,7 @@ function cards(){
         </div>
          </div>`;
          
-       if(tokens[con].tokens==taskV.user){
+       if(tokens[0].user==taskV.user){
         document.getElementById("data"+taskV.id).remove()
           document.getElementById('jarabeDiv').innerHTML += `
           <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
@@ -402,7 +402,7 @@ function cards(){
           </div>
            </div>`;
            
-         if(tokens[con].tokens==taskV.user){
+         if(tokens[0].user==taskV.user){
           document.getElementById("data"+taskV.id).remove()
             document.getElementById('jarabeDiv').innerHTML += `
             <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
