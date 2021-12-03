@@ -49,14 +49,20 @@ function perfil(){
   document.getElementById("hola").innerHTML=""
   document.getElementById("miitem").innerHTML=""
   document.getElementById("content").innerHTML=""
-
-  document.getElementById("perfil").innerHTML= ` <div class="w-full bg-center bg-cover h-96" style="background-image: url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  var task = firebase.database().ref("imagen-perfil");
+  task.on("child_added", function(data) {
+        
+    data.forEach(element => {
+      
+    
+    var taskV = element.val();
+  document.getElementById("perfil").innerHTML= ` <div class="w-full bg-center bg-cover h-96" style="background-image: url(${taskV.imagen2});">
   <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
       <div class="text-center">
-          <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">Perfil  <span class="text-blue-400 underline"></span></h1>
+          <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">${taskV.nombre}  <span class="text-blue-400 underline"></span></h1>
           <input type="file" id="file2" class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500" required>
       </div>
-      <img class="w-28 h-28 p-1 bg-white rounded-full" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb" alt=""/>
+      <img class="w-28 h-28 p-1 bg-white rounded-full" src="${taskV.imagen1}" alt=""/>
     <input type="file" id="file3">
     <input id="nombre" type="text" placeholder="nombre" class="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-indigo-500 shadow-md focus:outline-none focus:border-indigo-600" /> 
     <button onclick="perfil2()" data-modal-toggle="example2" data-modal-action="open" class="bg-purple-600 font-semibold text-white p-2 w-32 rounded-full hover:bg-purple-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2" style="
@@ -65,7 +71,10 @@ function perfil(){
 </div>
 
 `;
+});
+  });
 }
+
 function nuevapubli(){
  
 
@@ -199,11 +208,11 @@ function cards(){
       let btn = `btnjarabe${con}`;
       document.getElementById('sidebar').innerHTML += `
       <div class="card border w-96 hover:shadow-none relative flex flex-col mx-auto shadow-lg m-5">
-      <img class="max-h-20 w-full opacity-80 absolute top-0" style="z-index:-1" src="https://unsplash.com/photos/iFPBRwZ4I-M/download?force=true&w=640" alt="" />
+      <img class="max-h-20 w-full opacity-80 absolute top-0" style="z-index:-1" src="${taskV.imagen1}}" alt="" />
       <div class="profile w-full flex m-3 ml-4 text-white">
-        <img class="w-28 h-28 p-1 bg-white rounded-full" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb" alt=""/>
+        <img class="w-28 h-28 p-1 bg-white rounded-full" src="${taskV.imagen2}" alt=""/>
         <div class="title mt-11 ml-3 font-bold flex flex-col">
-          <div class="name break-words">Ricky</div>
+          <div class="name break-words">${taskV.nombre}}</div>
           <div class="add font-semibold text-sm italic dark">Designer</div>
         </div>
       </div>
