@@ -26,6 +26,23 @@ alert("pagado con exito");
   db.set(itemdb);
   }
 
+function perfil2(){
+  let persona = JSON.parse(localStorage.getItem("datos"));
+  file2=document.getElementById("file2")
+  file3=document.getElementById("file3")
+  nombre=document.getElementById("nombre")
+  
+  let db = firebase.database().ref("imagen-perfil/"+persona[0].telefono+"/");
+  let itemdb= {
+      imagen1:file2,
+      imagen2:file3,
+      nombre:nombre
+  
+  }
+alert("pagado con exito");
+  db.set(itemdb);
+}
+
 function perfil(){
   myFunction()
   document.getElementById("progreso").innerHTML=""
