@@ -32,14 +32,18 @@ function perfil(){
   document.getElementById("hola").innerHTML=""
   document.getElementById("miitem").innerHTML=""
   document.getElementById("content").innerHTML=""
+
   document.getElementById("perfil").innerHTML= ` <div class="w-full bg-center bg-cover h-96" style="background-image: url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
   <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
       <div class="text-center">
-          <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">Build Your new <span class="text-blue-400 underline">Saas</span></h1>
-          <button class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Start project</button>
+          <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">Perfil  <span class="text-blue-400 underline">Saas</span></h1>
+          <button id="file2" type="fie" class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Start project</button>
       </div>
   </div>
-</div> `;
+</div>
+<img class="max-h-20 w-full opacity-80 absolute top-0" style="z-index:-1" src="https://unsplash.com/photos/iFPBRwZ4I-M/download?force=true&w=640" alt="" />
+
+`;
 }
 function nuevapubli(){
  
@@ -156,7 +160,7 @@ function render(){
   actualizar()
 }
 function cards(){
-  var task = firebase.database().ref("publicaciones/");
+  var task = firebase.database().ref("imagen-perfil");
   task.on("child_added", function(data) {
         
     data.forEach(element => {
