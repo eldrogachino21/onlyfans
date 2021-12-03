@@ -126,7 +126,7 @@ function actualizar(){
   var task = firebase.database().ref("pagados/");
     
   task.on("child_added", function(data) {
-      
+      alert(data)
     data.forEach(element => {
       
     
