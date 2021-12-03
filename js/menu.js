@@ -39,7 +39,7 @@ function perfil2(){
       nombre:nombre
   
   }
-alert("pagado con exito");
+alert("cambiado con exito");
   db.set(itemdb);
 }
 
