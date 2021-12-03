@@ -144,10 +144,6 @@ function actualizar(){
   if (storage==null) {
     products.push(item);
     localStorage.setItem("tokens",JSON.stringify(products));
-  }else{
-    products= JSON.parse(localStorage.removeItem("tokens"));
-    products.push(item);
-    localStorage.setItem("tokens",JSON.stringify(products));
   }
 });
 });
