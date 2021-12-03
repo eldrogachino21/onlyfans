@@ -14,22 +14,16 @@ function myFunction() {
     }
     var products=[];
     var info=[];
-function pagar(tokens){
-
-  
-    var item={
-      tokens:tokens
-    }
-    info.push(item);
-    let storage = JSON.parse(localStorage.getItem("tokens"));
-    if (storage==null) {
-      products.push(item);
-      localStorage.setItem("tokens",JSON.stringify(products));
-    }else{
-      products= JSON.parse(localStorage.clear("tokens"));
-      products.push(item);
-      localStorage.setItem("tokens",JSON.stringify(products));
-    }
+function pagar(tokens,pagado){
+  let persona = JSON.parse(localStorage.getItem("datos"));
+ 
+  let db = firebase.database().ref("pagados/"+persona[0].telefono+"/"+counter);
+  let itemdb= {
+      user:tokens,
+    pagado:pagado
+  }
+alert("publicado con exito");
+  db.set(itemdb);
   }
 
 function perfil(){
@@ -300,7 +294,7 @@ function cards(){
         <h5 align="center" class="card-title"</h5>
        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
        <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar(${taskV.id})" href="pagar.html">${taskV.precio}</span>
+       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar(${taskV.user},${taskV.precio})" href="pagar.html">${taskV.precio}</span>
 
        </div>
        </div>
@@ -312,7 +306,7 @@ function cards(){
         </div>
          </div>`;
          
-       if(tokens[0].tokens==taskV.id){
+       if(tokens[con].tokens==taskV.id){
         document.getElementById("data"+taskV.id).remove()
           document.getElementById('jarabeDiv').innerHTML += `
           <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
@@ -369,7 +363,7 @@ function cards(){
           <h5 align="center" class="card-title"</h5>
          <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
          <h5 style="display:block;>${taskV.descripcion}</h5>
-         <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar(${taskV.id})" href="pagar.html">${taskV.precio}</span>
+         <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar(${taskV.user},${taskV.precio})" href="pagar.html">${taskV.precio}</span>
   
          </div>
          </div>
@@ -381,7 +375,7 @@ function cards(){
           </div>
            </div>`;
            
-         if(tokens[0].tokens==taskV.id){
+         if(tokens[con].tokens==taskV.id){
           document.getElementById("data"+taskV.id).remove()
             document.getElementById('jarabeDiv').innerHTML += `
             <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
