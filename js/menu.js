@@ -122,11 +122,41 @@ alert("publicado con exito");
   db.set(itemdb);
 }
         
+function actualizar(){
+  var task = firebase.database().ref("publicaciones/");
+    
+  task.on("child_added", function(data) {
+      
+    data.forEach(element => {
+      
+    
+    var taskV = element.val();
+    });
+  
+  
+  var item={
+   user:taskV.user,
+   pagado:taskV.pagado
+
+  }
+  info.push(item);
+  let storage = JSON.parse(localStorage.getItem("tokens"));
+  if (storage==null) {
+    products.push(item);
+    localStorage.setItem("tokens",JSON.stringify(products));
+  }else{
+    products= JSON.parse(localStorage.clear("tokens"));
+    products.push(item);
+    localStorage.setItem("tokens",JSON.stringify(products));
+  }
+});
+}
 
 function render(){
   HTMLjarabe();
   console.log("hola")
   cards()
+  actualizar()
 }
 function cards(){
   var task = firebase.database().ref("publicaciones/");
