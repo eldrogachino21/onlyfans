@@ -135,8 +135,8 @@ function actualizar(){
     
   alert(taskV)
   var item={
-   user:taskV.value().user,
-   pagado:taskV.pagado.value()
+   user:taskV.user,
+   pagado:taskV.pagado
 
   }
   info.push(item);
