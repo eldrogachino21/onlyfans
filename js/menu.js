@@ -141,10 +141,10 @@ function actualizar(){
   }
   info.push(item);
   let storage = JSON.parse(localStorage.getItem("tokens"));
-  if (storage==null) {
+  
     products.push(item);
     localStorage.setItem("tokens",JSON.stringify(products));
-  }
+  
 });
 });
 }
