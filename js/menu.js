@@ -131,7 +131,7 @@ function actualizar(){
       
     
     var taskV = element.val();
-    });
+    
   
   
   var item={
@@ -149,6 +149,7 @@ function actualizar(){
     products.push(item);
     localStorage.setItem("tokens",JSON.stringify(products));
   }
+});
 });
 }
 
