@@ -20,7 +20,7 @@ function pagar(tokens,pagado){
   let db = firebase.database().ref("pagados/"+persona[0].telefono+"/");
   let itemdb= {
       user:tokens,
-    pagado:pagado
+  
   }
 alert("pagado con exito");
   db.set(itemdb);
