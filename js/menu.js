@@ -52,10 +52,10 @@ function perfil(){
   var task = firebase.database().ref("imagen-perfil");
   task.on("child_added", function(data) {
         
-    data.forEach(element => {
+    
       
     
-    var taskV = element.val();
+    var taskV = data.val();
   document.getElementById("perfil").innerHTML= ` <div class="w-full bg-center bg-cover h-96" style="background-image: url(${taskV.imagen2});">
   <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
       <div class="text-center">
@@ -72,7 +72,7 @@ function perfil(){
 </div>
 
 `;
-});
+
   });
 }
 
