@@ -123,11 +123,12 @@ alert("publicado con exito");
 }
         
 function actualizar(){
-  var task = firebase.database().ref("pagados/");
+  let persona = JSON.parse(localStorage.getItem("datos"));
+  var task = firebase.database().ref("pagados/"+persona[0].telefono+);
     
   task.on("child_added", function(data) {
       
-    data.forEach(element => {
+    
       
     
     var taskV = element.val();
@@ -147,7 +148,7 @@ function actualizar(){
     localStorage.setItem("tokens",JSON.stringify(products));
   }
 });
-});
+
 }
 
 function render(){
