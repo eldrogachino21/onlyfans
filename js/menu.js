@@ -22,7 +22,7 @@ function pagar(tokens,pagado){
       user:tokens,
     pagado:pagado
   }
-alert("publicado con exito");
+alert("pagado con exito");
   db.set(itemdb);
   }
 
