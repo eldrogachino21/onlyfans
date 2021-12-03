@@ -41,6 +41,7 @@ function perfil(){
       </div>
       <img class="w-28 h-28 p-1 bg-white rounded-full" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb" alt=""/>
     <input type="file" id="file3">
+    <input id="nombre" type="text" placeholder="nombre" class="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-indigo-500 shadow-md focus:outline-none focus:border-indigo-600" /> 
       </div>
 </div>
 
