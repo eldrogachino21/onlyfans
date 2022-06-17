@@ -14,12 +14,12 @@ function myFunction() {
     }
     var products=[];
     var info=[];
-function pagar(tokens,pagado){
+function pagar(contador,tokens,pagado){
   let persona = JSON.parse(localStorage.getItem("datos"));
  
   let db = firebase.database().ref("pagados/"+persona[0].telefono+"/");
   let itemdb= {
-      user:tokens,
+      Contador:contador
   
   }
 alert("pagado con exito");
@@ -358,7 +358,7 @@ function cards(){
         <h5 align="center" class="card-title"</h5>
        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
        <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
+       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
 
        </div>
        </div>
@@ -427,7 +427,7 @@ function cards(){
           <h5 align="center" class="card-title"</h5>
          <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
          <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
+       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
         
          </div>
          </div>
