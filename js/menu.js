@@ -133,10 +133,13 @@ function publicar (){
   var d = new Date();
   var t = d.getTime();
   var counter= t;
-  var categoria = "costo"
+ 
   if(precio==""){
     categoria = "gratuita"
+  }else{
+    var categoria = "costo"
   }
+
 
   counter+=1;
   let persona = JSON.parse(localStorage.getItem("datos"));
