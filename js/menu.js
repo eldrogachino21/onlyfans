@@ -17,9 +17,10 @@ function myFunction() {
 function pagar(contador,tokens,pagado){
   let persona = JSON.parse(localStorage.getItem("datos"));
  
-  let db = firebase.database().ref("pagados/"+persona[0].telefono+"/");
+  let db = firebase.database().ref("pagados/"+persona[0].telefono+"/"+contador);
   let itemdb= {
-      Contador:contador
+      Contador:contador,
+      precio:pagado
   
   }
 alert("pagado con exito");
