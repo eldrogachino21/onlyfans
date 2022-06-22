@@ -309,21 +309,24 @@ function pagados(con){
         alt ="Card image cap">
         <div class="card-body" >
       
-         <div align="center">
+        <div align="center">
         
-         </div>
-      
-        <h5 align="center" class="card-title"</h5>
-        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-        <h5 style="display:block;>${taskV.descripcion}</h5>
-        </div>
-        </div>
-        <div class=" align-item-center">
-        <div class="btn-group">
-        </div>
-        </div> 
-        </div>
-        </div>`;
+                  </div>
+              
+                   <h5 align="center" class="card-title"</h5>
+                  <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+                  <h5 style="display:block;>${taskV.descripcion}</h5>
+              <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
+                
+                  </div>
+                  </div>
+                  <div class=" align-item-center">
+                                <div class="btn-group">
+                                                     </div>
+          
+                       </div> 
+                   </div>
+                    </div>`;
         }
         imagenpagada = 0 ;
     });
