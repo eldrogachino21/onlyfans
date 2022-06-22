@@ -329,70 +329,70 @@ function pagados(con){
     });
 
   });
-    task.on("child_changed", function(data) {
+    // task.on("child_changed", function(data) {
 
-      data.forEach(element => {
+    //   data.forEach(element => {
         
       
-        var taskV = element.val();
+    //     var taskV = element.val();
 
         
-        if(taskV.categoria=="costo"){
+    //     if(taskV.categoria=="costo"){
         
 
-        document.getElementById("data"+taskV.id).remove()
-        let URL = `${taskV.imagen}`;
-        let btn = `btnjarabe${con}`;
-        document.getElementById('jarabeDiv').innerHTML += `
-        <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-               <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
-         alt ="Card image cap">
-          <div class="card-body" >
+    //     document.getElementById("data"+taskV.id).remove()
+    //     let URL = `${taskV.imagen}`;
+    //     let btn = `btnjarabe${con}`;
+    //     document.getElementById('jarabeDiv').innerHTML += `
+    //     <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+    //            <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
+    //      alt ="Card image cap">
+    //       <div class="card-body" >
            
-              <div align="center">
+    //           <div align="center">
              
-              </div>
+    //           </div>
            
-               <h5 align="center" class="card-title"</h5>
-              <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-              <h5 style="display:block;>${taskV.descripcion}</h5>
-              </div>
-              </div>
-              <div class=" align-item-center">
-                            <div class="btn-group">
-                              </div>
+    //            <h5 align="center" class="card-title"</h5>
+    //           <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+    //           <h5 style="display:block;>${taskV.descripcion}</h5>
+    //           </div>
+    //           </div>
+    //           <div class=" align-item-center">
+    //                         <div class="btn-group">
+    //                           </div>
        
-                    </div> 
-               </div>
-                </div>`;
-         }else{
-          let URL = `${taskV.imagen}`;
-          let btn = `btnjarabe${con}`;
-          document.getElementById('jarabeDiv').innerHTML += `
-        <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
-        alt ="Card image cap">
-        <div class="card-body" >
+    //                 </div> 
+    //            </div>
+    //             </div>`;
+    //      }else{
+    //       let URL = `${taskV.imagen}`;
+    //       let btn = `btnjarabe${con}`;
+    //       document.getElementById('jarabeDiv').innerHTML += `
+    //     <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+    //     <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
+    //     alt ="Card image cap">
+    //     <div class="card-body" >
       
-         <div align="center">
+    //      <div align="center">
         
-         </div>
+    //      </div>
       
-        <h5 align="center" class="card-title"</h5>
-        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-        <h5 style="display:block;>${taskV.descripcion}</h5>
-        </div>
-        </div>
-        <div class=" align-item-center">
-        <div class="btn-group">
-        </div>
-        </div> 
-        </div>
-        </div>`;
-        }
-        });
+    //     <h5 align="center" class="card-title"</h5>
+    //     <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+    //     <h5 style="display:block;>${taskV.descripcion}</h5>
+    //     </div>
+    //     </div>
+    //     <div class=" align-item-center">
+    //     <div class="btn-group">
+    //     </div>
+    //     </div> 
+    //     </div>
+    //     </div>`;
+    //     }
+    //     });
     
-    });
+    // });
   
     var task = firebase.database().ref("publicaciones/");
     task.on("child_removed", function(data) {
@@ -401,132 +401,132 @@ function pagados(con){
 
     });
 
-    var tokens = JSON.parse(localStorage.getItem('tokens'));
-    var counter = 0;
-    var task = firebase.database().ref("publicaciones/");
+//     var tokens = JSON.parse(localStorage.getItem('tokens'));
+//     var counter = 0;
+//     var task = firebase.database().ref("publicaciones/");
     
-    task.on("child_added", function(data) {
+//     task.on("child_added", function(data) {
       
-      data.forEach(element => {
+//       data.forEach(element => {
         
       
-      var taskV = element.val();
+//       var taskV = element.val();
 
         
         
 
-        if(taskV.categoria=="costo"){
+//         if(taskV.categoria=="costo"){
         
         
-        let URL = `${taskV.imagen}`;
-        let btn = `btnjarabe${con}`;
-        document.getElementById('jarabeDiv').innerHTML += `
- <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-        <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
-  alt ="Card image cap">
-   <div class="card-body" >
+//         let URL = `${taskV.imagen}`;
+//         let btn = `btnjarabe${con}`;
+//         document.getElementById('jarabeDiv').innerHTML += `
+//  <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+//         <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
+//   alt ="Card image cap">
+//    <div class="card-body" >
     
-       <div align="center">
+//        <div align="center">
       
-       </div>
+//        </div>
     
-        <h5 align="center" class="card-title"</h5>
-       <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-       <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
+//         <h5 align="center" class="card-title"</h5>
+//        <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+//        <h5 style="display:block;>${taskV.descripcion}</h5>
+//        <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
 
-       </div>
-       </div>
-       <div class=" align-item-center">
-                     <div class="btn-group">
-                                          </div>
+//        </div>
+//        </div>
+//        <div class=" align-item-center">
+//                      <div class="btn-group">
+//                                           </div>
 
-             </div> 
-        </div>
-         </div>`;
+//              </div> 
+//         </div>
+//          </div>`;
          
   
-      }
-      con = counter += 1;
-    });
+//       }
+//       con = counter += 1;
+//     });
 
-  });
-    task.on("child_changed", function(data) {
+//   });
+//     task.on("child_changed", function(data) {
      
-      data.forEach(element => {
+//       data.forEach(element => {
         
       
-        var taskV = element.val();
+//         var taskV = element.val();
 
         
         
-        if(taskV.categoria=="costo"){
+//         if(taskV.categoria=="costo"){
         
         
-          let URL = `${taskV.imagen}`;
-          let btn = `btnjarabe${con}`;
-          document.getElementById('jarabeDiv').innerHTML += `
-   <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-          <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
-    alt ="Card image cap">
-     <div class="card-body" >
+//           let URL = `${taskV.imagen}`;
+//           let btn = `btnjarabe${con}`;
+//           document.getElementById('jarabeDiv').innerHTML += `
+//    <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+//           <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="https://media0.giphy.com/media/3eCMwCa0GYEFmvmI55/giphy.gif?cid=ecf05e47ytbnijtckifrqju4944tka75ms2sus4gem74y7dv&rid=giphy.gif&ct=g"
+//     alt ="Card image cap">
+//      <div class="card-body" >
       
-         <div align="center">
+//          <div align="center">
         
-         </div>
+//          </div>
       
-          <h5 align="center" class="card-title"</h5>
-         <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-         <h5 style="display:block;>${taskV.descripcion}</h5>
-       <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
+//           <h5 align="center" class="card-title"</h5>
+//          <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+//          <h5 style="display:block;>${taskV.descripcion}</h5>
+//        <span style="text-align: center;" align="center" class="inline-flex bg-pink-600 text-white rounded-full h-6 px-20 justify-center items-center"  onclick="pagar('${con}','${taskV.user}','${taskV.precio}')" href="pagar.html">${taskV.precio}</span>
         
-         </div>
-         </div>
-         <div class=" align-item-center">
-                       <div class="btn-group">
-                                            </div>
+//          </div>
+//          </div>
+//          <div class=" align-item-center">
+//                        <div class="btn-group">
+//                                             </div>
   
-               </div> 
-          </div>
-           </div>`;
+//                </div> 
+//           </div>
+//            </div>`;
            
-         if(tokens[0].user==taskV.user){
-          document.getElementById("data"+taskV.id).remove()
-            document.getElementById('jarabeDiv').innerHTML += `
-            <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
-                   <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
-             alt ="Card image cap">
-              <div class="card-body" >
+//          if(tokens[0].user==taskV.user){
+//           document.getElementById("data"+taskV.id).remove()
+//             document.getElementById('jarabeDiv').innerHTML += `
+//             <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
+//                    <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
+//              alt ="Card image cap">
+//               <div class="card-body" >
                
-                  <div align="center">
+//                   <div align="center">
                  
-                  </div>
+//                   </div>
                
-                   <h5 align="center" class="card-title"</h5>
-                  <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
-                  <h5 style="display:block;>${taskV.descripcion}</h5>
-                  </div>
-                  </div>
-                  <div class=" align-item-center">
-                                <div class="btn-group">
-                                                     </div>
+//                    <h5 align="center" class="card-title"</h5>
+//                   <h6   align="center" class="card-subtitle mb-2 text-muted">${taskV.descripcion} </h6>
+//                   <h5 style="display:block;>${taskV.descripcion}</h5>
+//                   </div>
+//                   </div>
+//                   <div class=" align-item-center">
+//                                 <div class="btn-group">
+//                                                      </div>
            
-                        </div> 
-                   </div>
-                    </div>`;
-          }
-        }
-        con = counter += 1;
-        });
+//                         </div> 
+//                    </div>
+//                     </div>`;
+//           }
+//         }
+//         con = counter += 1;
+//         });
     
-    });
+//     });
   
-    var task = firebase.database().ref("publicaciones/");
-    task.on("child_removed", function(data) {
-        var taskV = data.val();
-        document.getElementById("data"+taskV.id).remove()
+//     var task = firebase.database().ref("publicaciones/");
+//     task.on("child_removed", function(data) {
+//         var taskV = data.val();
+//         document.getElementById("data"+taskV.id).remove()
 
-    });
+//     });
 
 
 
