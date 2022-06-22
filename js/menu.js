@@ -237,7 +237,7 @@ function cards(){
 var imagenpagada=0;
 
 function pagados(con){
-    var task = firebase.database().ref("publicaciones/");
+    var task = firebase.database().ref("pagados/");
     
     task.on("child_added", function(data) {
         
