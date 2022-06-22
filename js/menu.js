@@ -237,21 +237,20 @@ function cards(){
 var imagenpagada=0;
 
 function pagados(con){
-  let persona = JSON.parse(localStorage.getItem("datos"));
- 
-  var pagados = firebase.database().ref("pagados/");
-
-  pagados.on("child_added", function(data) {
-      
-    data.forEach(element => {
-      
+  var counter = 0;
+    var task = firebase.database().ref("pagados/");
     
-    var pagados = element.val();
-    alert(element.val())
-    if(pagados.pagado==""){
+    task.on("child_added", function(data) {
+        
+    data.forEach(element => {
+        
+      
+    var taskV = element.val();
+
+    if(taskV.pagado==""){
       return;
     }
-    if(pagados.pagado=="pagado"){
+    if(taskV.pagado=="pagado"){
       imagenpagada=1;
     }
 
