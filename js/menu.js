@@ -336,7 +336,6 @@ function pagados(con){
       
         var taskV = element.val();
 
-        con = counter += 1;
         
         if(taskV.categoria=="costo"){
         
