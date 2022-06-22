@@ -245,12 +245,11 @@ function pagados(con){
     data.forEach(element => {
         
       
-    var pagados = element.val();
 
-    if(pagados.pagado==""){
+    if(element.val().pagado==""){
       return;
     }
-    if(pagados.pagado=="pagado"){
+    if(element.val().pagado=="pagado"){
       imagenpagada=1;
     }
 
