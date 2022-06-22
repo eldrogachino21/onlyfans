@@ -239,7 +239,7 @@ var imagenpagada=0;
 function pagados(con){
   let persona = JSON.parse(localStorage.getItem("datos"));
  
-  var pagados = firebase.database().ref("pagados/"+persona[0].telefono+"/"+con);
+  var pagados = firebase.database().ref("pagados/"+persona[0].telefono+"/2");
 
   pagados.on("child_added", function(data) {
       
