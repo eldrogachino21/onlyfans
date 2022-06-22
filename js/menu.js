@@ -247,7 +247,7 @@ function pagados(con){
       
     
     var pagados = element.val();
-    alert(element.val();
+    alert(element.val())
     if(pagados.pagado==""){
       return;
     }
