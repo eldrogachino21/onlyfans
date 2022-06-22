@@ -237,19 +237,19 @@ function cards(){
 var imagenpagada=0;
 
 function pagados(con){
-    var task = firebase.database().ref("pagados/");
+    var pagado = firebase.database().ref("pagados/");
     
-    task.on("child_added", function(data) {
+    pagado.on("child_added", function(data) {
         
     data.forEach(element => {
         
       
-    var taskV = element.val();
+    var pagados = element.val();
 
-    if(taskV.pagado==""){
+    if(pagados.pagado==""){
       return;
     }
-    if(taskV.pagado=="pagado"){
+    if(pagados.pagado=="pagado"){
       imagenpagada=1;
     }
 
