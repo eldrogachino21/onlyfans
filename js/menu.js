@@ -234,7 +234,7 @@ function cards(){
 });
 }
 
-var imagenpagada=0;
+var imagenpagada=1;
 let persona = JSON.parse(localStorage.getItem("datos"));
 
 function pagados(con){
