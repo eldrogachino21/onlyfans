@@ -237,7 +237,8 @@ function cards(){
 var imagenpagada=0;
 
 function pagados(con){
-    var pagado = firebase.database().ref("pagados/");
+  let persona = JSON.parse(localStorage.getItem("datos"));
+  var pagado = firebase.database().ref("pagados/"+persona[0].telefono+"/"+con);
     
     pagado.on("child_added", function(data) {
         
