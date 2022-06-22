@@ -274,7 +274,7 @@ function pagados(con){
     con = counter += 1;
         
     pagados(con);
-    if(taskV.categoria=="costo" ||imagenpagada == 0){
+    if(taskV.categoria=="costo" ){
       
 
       let URL = `${taskV.imagen}`;
