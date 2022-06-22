@@ -20,7 +20,8 @@ function pagar(contador,tokens,pagado){
   let db = firebase.database().ref("pagados/"+persona[0].telefono+"/"+contador);
   let itemdb= {
       Contador:contador,
-      precio:pagado
+      precio:pagado,
+      pagado:"pagado"
   
   }
 alert("pagado con exito");
@@ -233,6 +234,31 @@ function cards(){
 });
 }
 
+var imagenpagada=0;
+
+function pagados(con){
+  let persona = JSON.parse(localStorage.getItem("datos"));
+ 
+  var pagados = firebase.database().ref("pagados/"+persona[0].telefono+"/"+con);
+
+  pagados.on("child_added", function(data) {
+      
+    data.forEach(element => {
+      
+    
+    var pagados = element.val();
+    
+    if(pagados.pagado==""){
+      return;
+    }
+    if(pagados.pagado=="pagado"){
+      imagenpagada=1;
+    }
+
+    })
+  })
+}
+
   function HTMLjarabe() {
 
     var counter = 0;
@@ -240,20 +266,20 @@ function cards(){
     
     task.on("child_added", function(data) {
         
-      data.forEach(element => {
+    data.forEach(element => {
         
       
-      var taskV = element.val();
+    var taskV = element.val();
 
-        con = counter += 1;
+    con = counter += 1;
         
+    pagados(con);
+    if(taskV.categoria=="costo" ||imagenpagada == 0){
+      
 
-        if(taskV.categoria=="costo"){
-
-        
-        let URL = `${taskV.imagen}`;
-        let btn = `btnjarabe${con}`;
-        document.getElementById('jarabeDiv').innerHTML += `
+      let URL = `${taskV.imagen}`;
+      let btn = `btnjarabe${con}`;
+      document.getElementById('jarabeDiv').innerHTML += `
       <div id="data${taskV.id}" class="bg-white max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl "><div class="card"><div class="card mb-4 shadow-sm">
       <img onclick="mostrar(','','','${URL}','${con}','${btn}')" class="card-img-top" style=" height:28rem; width:23rem;" src="${URL}"
       alt ="Card image cap">
@@ -274,7 +300,7 @@ function cards(){
       </div> 
       </div>
       </div>`;
-        }else{
+        } else{
           let URL = `${taskV.imagen}`;
           let btn = `btnjarabe${con}`;
           document.getElementById('jarabeDiv').innerHTML += `
@@ -299,6 +325,7 @@ function cards(){
         </div>
         </div>`;
         }
+        imagenpagada = 0 ;
     });
 
   });
