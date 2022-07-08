@@ -248,9 +248,13 @@ function pagados(con){
       
 
     if(element.val().pagado==""){
+  console.log("no pagado")
+
       return;
     }
     if(element.val().pagado=="pagado"){
+  console.log("pagado")
+
       imagenpagada=1;
     }
 
