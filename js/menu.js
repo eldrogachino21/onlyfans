@@ -235,7 +235,7 @@ function cards(){
 }
 
 var imagenpagada=1;
-let persona = JSON.parse(localStorage.getItem("datos"));
+var persona = JSON.parse(localStorage.getItem("datos"));
 
 function pagados(con){
 
