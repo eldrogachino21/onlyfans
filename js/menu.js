@@ -24,8 +24,9 @@ function pagar(contador,tokens,pagado){
       pagado:"pagado"
   
   }
-alert("pagado con exito");
   db.set(itemdb);
+  location.replace('menu2.html');
+
   }
 
 function perfil2(){
